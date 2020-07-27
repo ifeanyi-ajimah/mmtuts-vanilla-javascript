@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Numbers</title>
+</head>
+<body>
+    
+<!-- two types of objects: 
+one created by us, one created by js -->
+
+<script>
+
+    let randy = Math.floor(2.8);//gets the nearest whole number towards the negative eg
+    console.log(randy); // = 2
+    Math.random(); //gives us random number between 0 and 1
+
+
+    let getRandomNumber = function(start, range){
+
+        let getRandom = Math.floor( (Math.random() * range ) + start);
+
+        while(getRandom > range){
+            getRandom = Math.floor((Math.random() * range ) + start);
+        }
+        return getRandom;
+    }
+
+    console.log( getRandomNumber(5, 10) );
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <p> It is good to understand that the browser is also an object. To refer to the Browser as an object, you refer to it as the <b> BOM </b> </p>
+    <P> BOM - Browser Object Model </P>
+    <P>To check this in ur console, say window.innerHeight , or window.innerWidth or window.close() etc </P>
+    <p>However, we use the DOM to manipulate browser content.  </p>
+    <p> <b> NODE- </b> in javascript means a simple html element.  Every HTML element is a node eg :  "<section></section>" , <b></b></p>
+</body>
+
+<script>
+    document.querySelector("#header-h2").innerHTML; // To see the content of an item selected 
+    document.querySelector("#header-h2").innerHTML = "Hello, this is a new element"; //To change content of the item selected or add content if it has no predefined content
+    //you can also use .innerHTML to insert data where it does not exist before eg
+    document.querySelectorAll("#new-villa"); // grabs all elements/ nodes with the id if new-villa
+
+    <span class="somethingNew"> </span>
+    document.querySelector(".somethingNew").innerHTML = "This text goes for the span";
+    document.querySelector("#header-h2").outerHTML  //returns the HTML element & all it's content, including the start tag and end tag, it's attributes (eg class, id, etc )
+    document.querySelector("#header-h2").id  // displays the id of the selected item. 
+    document.querySelector("#header-h2").id = "new-identity"  // renames the selected id  
+    document.querySelector("#header-h2").className //list the selected id class name
+    document.querySelector("#header-h2").classList //list an array of the class names and therefore can be changed with index eg
+    document.querySelector("#header-2").classList[0] = "new class" //renames first class in the array of classes 
+    document.querySelector("#header-h2").classList.add("test2-class");  // adds a new class - test2-class
+    document.querySelector("#header-h2").classList.remove("test2-class");  //removes test2-class
+    document.querySelector("#header-h2").classList.toggle("test2-class");  //toggles test2-class
+    //N/B: When using toggle class, do not toggle the same class that you targetted with ur query selector
+    
+    document.querySelector("#header-h2").classList.contains("test2-class");  //checks if selected item has such class and returns boolean value
+    document.querySelector(".base-class").hasAttribute("id"); //returns bolean after checking if selected item has the attribute indicated
+    document.querySelector(".post-cat").getAttribute("href"); //gets the attribute and returns it
+    document.querySelector(".post-cat").setAttribute("href", "www.unn.edu.ng"); //changes / sets the attribute to something else
+    document.querySelector(".base-class").removeAttribute("id"); //removes the indicated attribute
+
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+

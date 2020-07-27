@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.box{
+    padding: 75px 75px 75px 75px;
+    border: black 5px solid;
+    margin: 53px;
+    width: 15%;
+}
+</style>
+<body>
+    <div class="box">
+        <h1 class="theTopic"> This is a title </h1>
+    </div>
+
+    <br>
+    
+    <h3>Appending elements is better than using innerHTML to add element to a website. </h3>
+    <h2> Old Method : </h2>
+    <p> Step 0: select element you want to insert into </p>
+    <p> Step 1:  create element or tag you want to add to the DOM </p>
+    <p> Step 2: create the conent of the element or tag </p>
+    <p> Step 3: Write a method to attach the two together </p>
+    <p> Step 4: a method to take new element and insert into the DOM  --appendChild() </p>
+    <P> methods to use: createElement(), createTextNode(), appendChild()</P>
+    <br>
+    <h2> New Method </h2>
+    <p> the append() function</p>
+    <p> Step 0: select element you want to insert into </p>
+    <p> Step 1:  create element or tag you want to add to the DOM </p>
+    <p>append the data to the new element </p>
+    <p>insert into element into DOM - appendChild() function </p>
+</body>
+
+<script>
+    //method one
+let box = document.querySelector(".box");
+let newElement = document.createElement("a");// you can create any element ie html tag eg a, p, div, etc
+let newContent = document.createTextNode("This is a link"); //textNote is the content of the element or tag
+newElement.appendChild(newContent); // to add newContent to newElement
+box.appendChild(newElement);
+newElement.setAttribute("href", "www.cnn.com");
+
+
+//second / improved  method.
+
+let box2 = document.querySelector(".box");
+let newElementbr = document.createElement("br"); //created a new br element/tag
+let newElement2 = document.createElement("a");  //created a new a html tag/element
+newElement2.append("this is another link");   //append data to the newly created element
+box2.appendChild(newElementbr);      //insert new br to box
+box2.appendChild(newElement2);       //insert newElement2 to box
+newElement2.setAttribute("href", "www.cnn.com");   //added an attribute to the newly created element/ html tag
+
+</script>
+</html>
+

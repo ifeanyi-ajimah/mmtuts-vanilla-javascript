@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+    <input type="text" value="" id="myInput">
+</body>
+</html>
+
+<script>
+let getBody = document.body;
+//N/B: you can also say  let getBody = document.querySelector("body");
+
+let inputValue = document.querySelector("#myInput");//
+
+let newElement = document.createElement("h1");
+
+let date = new Date();
+let currentHour = date.getHours();
+
+
+let createTxtMsg;
+
+if ( currentHour >= 4 && currentHour < 10)
+{
+    createTxtMsg = "Good Morning! ";
+    inputValue.value = "Good morning";//
+}else if( currentHour >= 10 && currentHour < 12 ){
+    createTxtMsg = "Good Day!";
+}else if( currentHour >= 12 && currentHour < 18 ){
+    createTxtMsg = "Good Afternoon!";
+}
+else if( currentHour >= 18 && currentHour < 22 ){
+    createTxtMsg = "Good Afternoon!";
+}
+else if( currentHour >= 22 && currentHour < 4 ){
+    createTxtMsg = "Good Night! ";
+}else{
+    createTxtMsg = "What planet are you from ? ";
+}
+
+let createElementTxt = document.createTextNode(createTxtMsg);//creating a text node for the window
+
+newElement.appendChild(createElementTxt);//use appendChild to append a node to a node
+getBody.appendChild(newElement);
+newElement.setAttribute("class", "welcome there");
+newElement.style.cssText = "text-align: center; font-size = 60px; font-family: ariel";
+
+</script>
